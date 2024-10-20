@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css'; // Your custom CSS
+import { FacebookShareButton, WhatsappShareButton, TwitterShareButton, FacebookIcon, WhatsappIcon, TwitterIcon } from 'react-share';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -225,14 +227,9 @@ const App = () => {
               <div className="chapter-content bg-white p-4 rounded shadow-sm">
                 <h2 className="text-center mb-4">{selectedBook} - Chapter {selectedChapter}</h2>
                 <div className="row">
-                  {chapterContent && chapterContent.verses.map((verse) => (
+                  {/* {chapterContent && chapterContent.verses.map((verse) => (
                     <div key={verse.verse} className="col-md-12 mb-3">
-                      {/* <div className="card border-red bg-primary">
-                        <div className="card-body">
-                          <h5 className="card-title">Chapter {selectedChapter} : Verse {verse.verse}</h5>
-                          <p className="card-text">{verse.text}</p>
-                        </div>
-                      </div> */}
+           
                       <div className="card mb-3 shadow-lg border-0" style={{ borderRadius: '15px', overflow: 'hidden' }}>
                         <div className="card-header bg-primary text-white">
                           <h5 className="card-title m-0">Chapter {selectedChapter} : Verse {verse.verse}</h5>
@@ -243,7 +240,45 @@ const App = () => {
                       </div>
 
                     </div>
+                  ))} */}
+
+                  {chapterContent && chapterContent.verses.map((verse) => (
+                    <div key={verse.verse} className="col-md-12 mb-3">
+                      <div className="card mb-3 shadow-lg border-0" style={{ borderRadius: '15px', overflow: 'hidden' }}>
+                        <div className="card-header bg-primary text-white">
+                          <h5 className="card-title m-0">{bookContent.book.tamil} : {selectedBook} - Chapter {selectedChapter} : Verse {verse.verse}</h5>
+                        </div>
+                        <div className="card-body bg-light">
+                          <p className="card-text" style={{ fontSize: '1.1rem', lineHeight: '1.5' }}>{verse.text}</p>
+
+                          {/* Share and Copy Buttons */}
+                          <div className="d-flex justify-content-between mt-3">
+                            <div>
+                              <FacebookShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} quote={` ${selectedBook} Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
+                                <FacebookIcon size={32} round />
+                              </FacebookShareButton>
+
+                              <WhatsappShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
+                                <WhatsappIcon size={32} round />
+                              </WhatsappShareButton>
+
+                              <TwitterShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
+                                <TwitterIcon size={32} round />
+                              </TwitterShareButton>
+
+
+                            </div>
+
+                            <CopyToClipboard text={`${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse} \n\n ${verse.text}\n`} onCopy={() => alert('Verse copied to clipboard!')}>
+                              <button className="btn btn-light btn-sm">Copy</button>
+                            </CopyToClipboard>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   ))}
+
+
                 </div>
                 <h2 className="text-center mb-4">{selectedBook} - Chapter {selectedChapter}</h2>
               </div>
@@ -270,7 +305,7 @@ const App = () => {
 
           {verseContent && (
             <div className="verse-content mb-4">
-              <h2>{selectedBook} - Chapter {selectedChapter} - Verse {selectedVerse}</h2>
+              <h2>{bookContent.book.tamil} : {selectedBook} - Chapter {selectedChapter} - Verse {selectedVerse}</h2>
 
               <div className="chapter-navigation d-flex justify-content-between mb-3">
                 <button className="btn btn-danger" disabled={selectedVerse === '1'} onClick={() => {
@@ -294,10 +329,31 @@ const App = () => {
               </div>
               <div className="card mb-3 shadow-lg border-0" style={{ borderRadius: '15px', overflow: 'hidden' }}>
                 <div className="card-header bg-primary text-white">
-                  <h5 className="card-title m-0">{selectedBook} - Chapter {selectedChapter} - Verse {selectedVerse}</h5>
+                  <h5 className="card-title m-0">{bookContent.book.tamil} : {selectedBook} - Chapter {selectedChapter} : Verse {selectedVerse}</h5>
                 </div>
                 <div className="card-body bg-light">
                   <p className="card-text" style={{ fontSize: '1.1rem', lineHeight: '1.5' }}> {verseContent.text}</p>
+                  <div className="d-flex justify-content-between mt-3">
+                    <div>
+                      <FacebookShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} quote={` ${selectedBook} Chapter ${selectedChapter} : Verse ${selectedVerse}  \n\n ${verseContent.text}`} className="me-2">
+                        <FacebookIcon size={32} round />
+                      </FacebookShareButton>
+
+                      <WhatsappShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${selectedBook} : Chapter ${selectedChapter} : Verse ${selectedVerse}  \n\n ${verseContent.text}`} className="me-2">
+                        <WhatsappIcon size={32} round />
+                      </WhatsappShareButton>
+
+                      <TwitterShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${selectedBook} : Chapter ${selectedChapter} : Verse ${selectedVerse}  \n\n ${verseContent.text}`} className="me-2">
+                        <TwitterIcon size={32} round />
+                      </TwitterShareButton>
+
+
+                    </div>
+
+                    <CopyToClipboard text={`${selectedBook} : Chapter ${selectedChapter} : Verse ${selectedVerse} \n\n ${verseContent.text}\n`} onCopy={() => alert('Verse copied to clipboard!')}>
+                      <button className="btn btn-light btn-sm">Copy</button>
+                    </CopyToClipboard>
+                  </div>
                 </div>
               </div>
 
