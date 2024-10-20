@@ -391,17 +391,17 @@ const App = () => {
       <footer className="bg-primary text-white fixed-bottom">
         <div className=" d-flex justify-content-between align-items-center py-2">
           {/* Left Section */}
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center border border-light p-2 rounded">
             <p className="mb-0 me-3">&copy; 2024 Tamil Bible Online</p>
           </div>
 
           {/* Center Section */}
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center border border-light p-2 rounded">
             <p className="mb-0">Made With ❤️</p>
           </div>
 
           {/* Right Section */}
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center border border-light p-2 rounded">
             <p className="mb-0">Total Visitors: {totalCount}</p>
           </div>
         </div>
