@@ -191,7 +191,7 @@ const App = () => {
             </div>
             <div className="col-12 col-sm-4 mb-2"> {/* Full width on extra small screens, one-third on small and up */}
               <select className="form-select" value={selectedVerse} onChange={handleVerseChange} disabled={!selectedChapter}>
-                <option value="All Verses">All Verses</option>
+                <option value="All Verses">Show All Verses</option>
                 {verses.map((verse, index) => (
                   <option key={index} value={verse}>
                     Verse {verse}
