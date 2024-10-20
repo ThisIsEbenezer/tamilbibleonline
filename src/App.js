@@ -127,9 +127,9 @@ const App = () => {
       </header>
 
       <div className="container flex-grow-1 mt-5 pt-5"> {/* Adjusted margins */}
-        <div className="dropdowns mb-3 ">
+       <div className="dropdowns mb-3">
           <div className="row">
-            <div className="col">
+            <div className="col-12 col-sm-4 mb-2"> {/* Full width on extra small screens, one-third on small and up */}
               <select className="form-select" value={selectedBook} onChange={handleBookChange}>
                 <option value="">Select a Book</option>
                 {books.map((book, index) => (
@@ -139,7 +139,7 @@ const App = () => {
                 ))}
               </select>
             </div>
-            <div className="col">
+            <div className="col-12 col-sm-4 mb-2"> {/* Full width on extra small screens, one-third on small and up */}
               <select className="form-select" value={selectedChapter} onChange={handleChapterChange} disabled={!selectedBook}>
                 <option value="">Select a Chapter</option>
                 {chapters.map((chapter, index) => (
@@ -149,7 +149,7 @@ const App = () => {
                 ))}
               </select>
             </div>
-            <div className="col">
+            <div className="col-12 col-sm-4 mb-2"> {/* Full width on extra small screens, one-third on small and up */}
               <select className="form-select" value={selectedVerse} onChange={handleVerseChange} disabled={!selectedChapter}>
                 <option value="All Verses">All Verses</option>
                 {verses.map((verse, index) => (
