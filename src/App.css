@@ -1,4 +1,11 @@
 /* App.css or index.css */
+/* App.css or index.css */
+@media (max-width: 992px) {
+  header .containerheader {
+    justify-content: center; /* Center everything in small screens */
+  }
+}
+
 
 body {
     font-family: 'Tiro Tamil', sans-serif;
@@ -32,7 +39,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 90px; /* Adjust as needed */
+    height: 70px; /* Adjust as needed */
     background-color: #f8f9fa; /* Bootstrap light background */
     padding: 15px; /* Padding for the footer */
     text-align: center; /* Centered text */

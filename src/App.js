@@ -121,32 +121,39 @@ const App = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
      
+     
       <header className="bg-primary text-white fixed-top py-3">
-        <div className=" d-flex justify-content-between align-items-center">
-          {/* Logo */}
-          <img
-            src='https://i.ibb.co/mX22r3T/tamilbibilelogo.png'
-            alt="Tamil Bible Online Logo"
-            className="rounded-circle" // Makes the logo round
-            style={{ width: '60px', height: '60px' }} // Adjust size as needed
-          />
+        <div className="containerheader d-flex justify-content-between align-items-center">
+          {/* Logo with Link */}
+          <a href="/" className="d-flex align-items-center">
+            <img
+              src='https://i.ibb.co/mX22r3T/tamilbibilelogo.png'
+              alt="Tamil Bible Online Logo"
+              className="rounded-circle" // Makes the logo round
+              style={{ width: '60px', height: '60px' }} // Adjust size as needed
+            />
+          </a>
 
           {/* Title - only visible on larger screens */}
-          <h1 className="d-none d-lg-block text-center flex-grow-1 mx-3">Tamil Bible Online</h1>
+          <a href="/" className="d-none d-lg-block text-white text-decoration-none text-center flex-grow-1 mx-3">
+            <h3>Tamil Bible Online</h3>
+          </a>
+
 
           {/* Empty div for spacing on larger screens */}
           <div className="d-lg-none flex-grow-1" /> {/* This creates space on the right for mobile view */}
-           
-
         </div>
       </header>
 
+
+
       <div className="container flex-grow-1 mt-5 pt-5"> {/* Adjusted margins */}
        <div className="dropdowns mb-3">
+       <br />
           <div className="row">
             <div className="col-12 col-sm-4 mb-2"> {/* Full width on extra small screens, one-third on small and up */}
               <select className="form-select" value={selectedBook} onChange={handleBookChange}>
-                <option value="">Select a Book</option>
+                <option value="">Select Book</option>
                 {books.map((book, index) => (
                   <option key={index} value={book.name}>
                     {book.name}
@@ -156,7 +163,7 @@ const App = () => {
             </div>
             <div className="col-12 col-sm-4 mb-2"> {/* Full width on extra small screens, one-third on small and up */}
               <select className="form-select" value={selectedChapter} onChange={handleChapterChange} disabled={!selectedBook}>
-                <option value="">Select a Chapter</option>
+                <option value="">Select Chapter</option>
                 {chapters.map((chapter, index) => (
                   <option key={index} value={chapter}>
                     Chapter {chapter}
