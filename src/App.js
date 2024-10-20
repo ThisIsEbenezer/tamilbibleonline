@@ -120,10 +120,25 @@ const App = () => {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      <header className="bg-primary text-white text-center py-3 fixed-top">
-        Tamil Bible Online
-        {/* <p className="lead">Explore the Bible by Book, Chapter, and Verse</p> */}
+     
+      <header className="bg-primary text-white fixed-top py-3">
+        <div className=" d-flex justify-content-between align-items-center">
+          {/* Logo */}
+          <img
+            src='https://i.ibb.co/mX22r3T/tamilbibilelogo.png'
+            alt="Tamil Bible Online Logo"
+            className="rounded-circle" // Makes the logo round
+            style={{ width: '60px', height: '60px' }} // Adjust size as needed
+          />
 
+          {/* Title - only visible on larger screens */}
+          <h1 className="d-none d-lg-block text-center flex-grow-1 mx-3">Tamil Bible Online</h1>
+
+          {/* Empty div for spacing on larger screens */}
+          <div className="d-lg-none flex-grow-1" /> {/* This creates space on the right for mobile view */}
+           
+
+        </div>
       </header>
 
       <div className="container flex-grow-1 mt-5 pt-5"> {/* Adjusted margins */}
