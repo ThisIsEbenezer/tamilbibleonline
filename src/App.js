@@ -290,7 +290,7 @@ const App = () => {
       </div>
 
       <footer className="bg-primary text-white text-center py-1 fixed-bottom">
-        <p>&copy; 2024 Tamil Bible Online. All Rights Reserved.</p> 
+        <p>&copy; 2024 Tamil Bible Online.</p> 
        Made With ❤️
         <br />
       </footer>

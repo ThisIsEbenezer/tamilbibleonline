@@ -32,7 +32,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 80px; /* Adjust as needed */
+    height: 90px; /* Adjust as needed */
     background-color: #f8f9fa; /* Bootstrap light background */
     padding: 15px; /* Padding for the footer */
     text-align: center; /* Centered text */
