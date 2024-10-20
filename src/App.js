@@ -12,6 +12,7 @@ const App = () => {
   const [bookContent, setBookContent] = useState(null);
   const [chapterContent, setChapterContent] = useState(null);
   const [verseContent, setVerseContent] = useState(null);
+  const [totalCount, setTotalCount] = useState(0);
 
   // Fetch books with chapters when the component mounts
   useEffect(() => {
@@ -26,6 +27,21 @@ const App = () => {
 
     fetchBooksWithChapters();
   }, []);
+
+  useEffect(() => {
+    // Fetch the view count from the API when the component loads
+    const fetchViewCount = async () => {
+      try {
+        const response = await axios.get('https://tamilbibleonlineapi.netlify.app/.netlify/functions/api/viewcount');
+        const { totalCount } = response.data;
+        setTotalCount(totalCount);
+      } catch (error) {
+        console.error('Error fetching view count:', error);
+      }
+    };
+
+    fetchViewCount();
+  }, []); // Empty dependency array to run the effect only once on mount
 
   useEffect(() => {
     // Function to call the API
@@ -311,10 +327,28 @@ const App = () => {
         </div>
       </div>
 
-      <footer className="bg-primary text-white text-center py-1 fixed-bottom">
-        <p>&copy; 2024 Tamil Bible Online.</p> 
-       Made With ❤️
-        <br />
+      {/* <footer className="bg-primary text-white text-center py-1 fixed-bottom">
+        <p>&copy; 2024 Tamil Bible Online.</p>
+        <p>Made With ❤️</p>
+        <p>Total Views: {totalCount}</p>
+      </footer> */}
+      <footer className="bg-primary text-white fixed-bottom">
+        <div className=" d-flex justify-content-between align-items-center py-2">
+          {/* Left Section */}
+          <div className="d-flex align-items-center">
+            <p className="mb-0 me-3">&copy; 2024 Tamil Bible Online</p>
+          </div>
+
+          {/* Center Section */}
+          <div className="d-flex align-items-center">
+            <p className="mb-0">Made With ❤️</p>
+          </div>
+
+          {/* Right Section */}
+          <div className="d-flex align-items-center">
+            <p className="mb-0">Total Visitors: {totalCount}</p>
+          </div>
+        </div>
       </footer>
     </div>
   );

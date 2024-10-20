@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Tamil&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400..800&display=swap');
 
 body {
   margin: 0;
@@ -13,4 +12,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.baloo-thambi-2 {
+  font-family: "Baloo Thambi 2", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
