@@ -254,22 +254,22 @@ const App = () => {
                           {/* Share and Copy Buttons */}
                           <div className="d-flex justify-content-between mt-3">
                             <div>
-                              <FacebookShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} quote={` ${selectedBook} Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
+                              <FacebookShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} quote={` ${bookContent.book.tamil} ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
                                 <FacebookIcon size={32} round />
                               </FacebookShareButton>
 
-                              <WhatsappShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
+                              <WhatsappShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${bookContent.book.tamil} ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
                                 <WhatsappIcon size={32} round />
                               </WhatsappShareButton>
 
-                              <TwitterShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
+                              <TwitterShareButton url={`\n\n Discover more about the Bible at: http://tamilbibleonline.netlify.app/`} title={` ${bookContent.book.tamil} ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse}  \n\n ${verse.text}`} className="me-2">
                                 <TwitterIcon size={32} round />
                               </TwitterShareButton>
 
 
                             </div>
 
-                            <CopyToClipboard text={`${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse} \n\n ${verse.text}\n`} onCopy={() => alert('Verse copied to clipboard!')}>
+                            <CopyToClipboard text={`${bookContent.book.tamil} ${selectedBook} : Chapter ${selectedChapter} : Verse ${verse.verse} \n\n ${verse.text}\n`} onCopy={() => alert('Verse copied to clipboard!')}>
                               <button className="btn btn-light btn-sm">Copy</button>
                             </CopyToClipboard>
                           </div>
