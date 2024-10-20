@@ -1,0 +1,40 @@
+/* App.css or index.css */
+
+body {
+    font-family: 'Tiro Tamil', sans-serif;
+}
+
+.font-title {
+    font-family: 'Tiro Tamil', sans-serif;
+    font-size: 2rem; /* Adjust font size as needed */
+}
+
+.font-body {
+    font-family: 'Tiro Tamil', sans-serif;
+    font-size: 1rem; /* Adjust font size as needed */
+}
+
+
+html, body {
+  font-family: 'Tiro Tamil', sans-serif;
+    height: 100%; /* Ensure the body takes the full height */
+}
+
+
+
+.container {
+    min-height: calc(100vh - 60px); /* Adjust based on footer height */
+    padding-bottom: 60px; /* Space for footer */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px; /* Adjust as needed */
+    background-color: #f8f9fa; /* Bootstrap light background */
+    padding: 15px; /* Padding for the footer */
+    text-align: center; /* Centered text */
+    border-top: 1px solid #dee2e6; /* Optional border for separation */
+}
