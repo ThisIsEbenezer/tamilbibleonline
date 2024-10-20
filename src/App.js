@@ -277,7 +277,7 @@ const App = () => {
                       </div>
                     </div>
                   ))}
-
+                  <br /><br /><br />
 
                 </div>
                 <h2 className="text-center mb-4">{selectedBook} - Chapter {selectedChapter}</h2>
@@ -380,6 +380,7 @@ const App = () => {
               </div>
             </div>
           )}
+          <br /><br /><br />
         </div>
       </div>
 
@@ -389,23 +390,27 @@ const App = () => {
         <p>Total Views: {totalCount}</p>
       </footer> */}
       <footer className="bg-primary text-white fixed-bottom">
-        <div className=" d-flex justify-content-between align-items-center py-2">
+        <div className="d-flex justify-content-between align-items-center py-3">
           {/* Left Section */}
           <div className="d-flex align-items-center border border-light p-2 rounded">
-            <p className="mb-0 me-3">&copy; 2024 Tamil Bible Online</p>
+            <p className="mb-0 me-3 d-none d-sm-block">&copy; 2024 Tamil Bible Online</p>
+            <h6 className="mb-0 me-3 d-block d-sm-none">&copy;  2024 Tamil Bible Online</h6>
           </div>
 
           {/* Center Section */}
           <div className="d-flex align-items-center border border-light p-2 rounded">
-            <p className="mb-0">Made With ❤️</p>
+            <p className="mb-0 d-none d-sm-block">Made With ❤️</p>
+            <h6 className="mb-0 d-block d-sm-none">Made With ❤️</h6>
           </div>
 
           {/* Right Section */}
           <div className="d-flex align-items-center border border-light p-2 rounded">
-            <p className="mb-0">Total Visitors: {totalCount}</p>
+            <p className="mb-0 d-none d-sm-block">Total Visitors: {totalCount}</p>
+            <h6 className="mb-0 d-block d-sm-none">Total Visitors: {totalCount}</h6>
           </div>
         </div>
       </footer>
+
     </div>
   );
 };
