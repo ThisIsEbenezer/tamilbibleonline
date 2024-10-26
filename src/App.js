@@ -404,14 +404,16 @@ const App = () => {
             <h6 className="mb-0 d-block d-sm-none">Made With ❤️</h6>
           </div>
 
-          {/* Right Section */}
           <div className="d-flex align-items-center border border-light p-2 rounded">
-            <p className="mb-0 d-none d-sm-block">Visitors: </HitCounter></p>
-            <h6 className="mb-0 d-block d-sm-none">Visitors: </HitCounter> </h6>
-            
-            </div>
+            <p className="mb-0 d-none d-sm-block">
+              Visitors: <HitCounter />
+            </p>
+            <h6 className="mb-0 d-block d-sm-none">
+              Visitors: <HitCounter />
+            </h6>
           </div>
-        </div>
+
+
       </footer>
 
     </div>
