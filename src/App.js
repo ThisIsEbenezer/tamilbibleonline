@@ -15,7 +15,7 @@ const App = () => {
   const [bookContent, setBookContent] = useState(null);
   const [chapterContent, setChapterContent] = useState(null);
   const [verseContent, setVerseContent] = useState(null);
-  const [totalCount, setTotalCount] = useState(0);
+  //const [totalCount, setTotalCount] = useState(0);
 
   // Fetch books with chapters when the component mounts
   useEffect(() => {
@@ -31,6 +31,7 @@ const App = () => {
     fetchBooksWithChapters();
   }, []);
 
+  /*
   useEffect(() => {
     // Fetch the view count from the API when the component loads
     const fetchViewCount = async () => {
@@ -45,6 +46,7 @@ const App = () => {
 
     fetchViewCount();
   }, []); // Empty dependency array to run the effect only once on mount
+*/
 
   useEffect(() => {
     // Function to call the API
