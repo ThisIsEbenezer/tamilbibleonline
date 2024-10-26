@@ -412,7 +412,7 @@ const App = () => {
               Visitors: <HitCounter />
             </h6>
           </div>
-
+        </div>
 
       </footer>
 
