@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css'; // Your custom CSS
 import { FacebookShareButton, WhatsappShareButton, TwitterShareButton, FacebookIcon, WhatsappIcon, TwitterIcon } from 'react-share';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import HitCounter from './HitCounter'; 
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -405,8 +406,10 @@ const App = () => {
 
           {/* Right Section */}
           <div className="d-flex align-items-center border border-light p-2 rounded">
-            <p className="mb-0 d-none d-sm-block">Total Visitors: {totalCount}</p>
-            <h6 className="mb-0 d-block d-sm-none">Total Visitors: {totalCount}</h6>
+            <p className="mb-0 d-none d-sm-block">Visitors: </HitCounter></p>
+            <h6 className="mb-0 d-block d-sm-none">Visitors: </HitCounter> </h6>
+            
+            </div>
           </div>
         </div>
       </footer>
